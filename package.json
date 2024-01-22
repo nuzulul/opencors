@@ -2,10 +2,18 @@
   "name": "opencors",
   "version": "1.0.0",
   "description": "OPENCORS is a simple NodeJS based CORS Proxy",
-  "main": "server.ts",
+  "main": "dist/cjs/opencors.js",
+  "module": "dist/mjs/opencors.js",
+  "exports": {
+    ".": {
+        "import": "./dist/mjs/opencors.js",
+        "require": "./dist/cjs/opencors.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"npx ts-node server.ts",
+	"buildwin": "del /S /Q .\\dist\\* && tsc -p tsconfig-mjs.json && tsc -p tsconfig-cjs.json && echo {\"type\": \"commonjs\"}>dist\\cjs\\package.json && echo {\"type\": \"module\"}>dist\\mjs\\package.json",
+    "start":"ts-node server.ts",
     "dev":"nodemon server.ts"
   },
   "repository": {
@@ -17,7 +25,12 @@
     "cors-proxy",
     "nodejs",
     "node-js",
-    "node"
+    "node",
+	"opencors",
+	"proxy",
+	"cross-domain",
+	"cross-origin",
+	"scraper"
   ],
   "author": "Nuzulul Zulkarnain",
   "license": "MIT",

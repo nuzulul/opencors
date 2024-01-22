@@ -2,6 +2,12 @@
 
 **OpenCORS** is a simple NodeJS based CORS Proxy
 
+## Installation
+
+```javascript
+npm install opncors
+```
+
 ## Example
 
 ### Server
@@ -10,8 +16,15 @@
 import {OpenCORS} from 'opencors'
 
 const server = new OpenCORS({
-					port:4000
-				})
+	port:4000
+})
+```
+```javascript
+const {OpenCORS} = require('opencors')
+
+const server = new OpenCORS({
+	port:4000
+})
 ```
 Request examples:
 
