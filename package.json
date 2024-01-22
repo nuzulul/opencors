@@ -1,0 +1,33 @@
+{
+  "name": "opencors",
+  "version": "1.0.0",
+  "description": "OPENCORS is a simple NodeJS based CORS Proxy",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"npx ts-node server.ts",
+    "dev":"nodemon server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuzulul/opencors.git"
+  },
+  "keywords": [
+    "cors",
+    "cors-proxy",
+    "nodejs",
+    "node-js",
+    "node"
+  ],
+  "author": "Nuzulul Zulkarnain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nuzulul/opencors/issues"
+  },
+  "homepage": "https://github.com/nuzulul/opencors#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
