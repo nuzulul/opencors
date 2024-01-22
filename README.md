@@ -2,6 +2,13 @@
 
 **OpenCORS** is a simple NodeJS based CORS Proxy
 
+## Features
+
+✅ 0 Dependencies
+✅ Follow redirects
+✅ Raw response type
+✅ SSL
+
 ## Installation
 
 ```javascript
@@ -16,24 +23,24 @@ npm install opencors
 import {OpenCORS} from 'opencors'
 
 const server = new OpenCORS({
-	port:4000
+	//port:4000
 })
 ```
 ```javascript
 const {OpenCORS} = require('opencors')
 
 const server = new OpenCORS({
-	port:4000
+	//port:4000
 })
 ```
 Request examples:
 
-* `http://localhost:4000/?url=https://www.google.com/` - Raw Google.com with CORS headers
+* `https://lrwj6n-4000.csb.app/?url=https://www.google.com/` - Raw Google.com with CORS headers
 
 ### Client
 
 ```javascript
-fetch('http://localhost:4000/?url=https://www.google.com/').then(function (response){
+fetch('https://lrwj6n-4000.csb.app/?url=https://www.google.com/').then(function (response){
 	return response.text()
 }).then(function (html){
 	console.log(html)
@@ -52,4 +59,5 @@ npm start
 
 Live demo :
 
-[https://opencors.glitch.me/](https://opencors.glitch.me/)
+* [https://lrwj6n-4000.csb.app/](https://lrwj6n-4000.csb.app/)
+* [https://codesandbox.io/p/devbox/opencors-lrwj6n](https://codesandbox.io/p/devbox/opencors-lrwj6n)

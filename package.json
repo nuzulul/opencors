@@ -17,7 +17,12 @@
     "build-win": "del /S /Q .\\dist\\* && tsc -p tsconfig-mjs.json && tsc -p tsconfig-cjs.json && echo {\"type\": \"commonjs\"}>dist\\cjs\\package.json && echo {\"type\": \"module\"}>dist\\mjs\\package.json",
     "start-ts":"ts-node server.ts",
     "dev":"nodemon server.ts",
-    "clean-win":"rmdir /S /Q .\\public"
+    "clean-win":"del /S /Q .\\public && del /S /Q .\\dist && rmdir /S /Q .\\node_modules && rmdir /S /Q .\\test\\cjs\\node_modules && rmdir /S /Q .\\test\\mjs\\node_modules",
+    "test-win":"npm link && cd .\\test\\cjs && npm install && npm link opencors && cd .\\..\\mjs && npm install && npm link opencors",
+    "test-cjs":"cd .\\test\\cjs && npm start",
+    "test-mjs":"cd .\\test\\mjs && npm start",
+    "prepare-win":"npm install && npm run build-win && npm run test-win && npm run build",
+    "publish-win":"npm run clean-win && npm run build-win && npm publish"
   },
   "repository": {
     "type": "git",
