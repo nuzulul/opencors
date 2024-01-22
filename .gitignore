@@ -132,3 +132,4 @@ dist
 #hook
 test/cjs/node_modules/
 test/mjs/node_modules/
+public/

@@ -5,7 +5,7 @@
 ## Installation
 
 ```javascript
-npm install opncors
+npm install opencors
 ```
 
 ## Example
@@ -41,3 +41,15 @@ fetch('http://localhost:4000/?url=https://www.google.com/').then(function (respo
 	console.warn('Something went wrong.',err)
 })
 ```
+
+## Demo
+
+```javascript
+git clone https://github.com/nuzulul/opencors.git
+npm install
+npm start
+```
+
+Live demo :
+
+[https://opencors.glitch.me/](https://opencors.glitch.me/)

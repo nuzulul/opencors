@@ -1,7 +1,7 @@
 {
   "name": "opencors",
   "version": "1.0.1",
-  "description": "OPENCORS is a simple NodeJS based CORS Proxy",
+  "description": "OpenCORS is a simple NodeJS based CORS Proxy",
   "main": "dist/cjs/opencors.js",
   "module": "dist/mjs/opencors.js",
   "exports": {
@@ -12,9 +12,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"buildwin": "del /S /Q .\\dist\\* && tsc -p tsconfig-mjs.json && tsc -p tsconfig-cjs.json && echo {\"type\": \"commonjs\"}>dist\\cjs\\package.json && echo {\"type\": \"module\"}>dist\\mjs\\package.json",
-    "start":"ts-node server.ts",
-    "dev":"nodemon server.ts"
+    "build": "tsc",
+    "start": "npm run build && node public/server.js",
+    "build-win": "del /S /Q .\\dist\\* && tsc -p tsconfig-mjs.json && tsc -p tsconfig-cjs.json && echo {\"type\": \"commonjs\"}>dist\\cjs\\package.json && echo {\"type\": \"module\"}>dist\\mjs\\package.json",
+    "start-ts":"ts-node server.ts",
+    "dev":"nodemon server.ts",
+    "clean-win":"rmdir /S /Q .\\public"
   },
   "repository": {
     "type": "git",

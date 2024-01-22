@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig-base.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "public",
+        "target": "es6",
+        "rootDir": ".",
+    },
+  "include": ["server.ts","src"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
