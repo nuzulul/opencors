@@ -133,3 +133,4 @@ dist
 test/cjs/node_modules/
 test/mjs/node_modules/
 public/
+package-lock.json

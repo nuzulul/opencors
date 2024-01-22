@@ -1,6 +1,6 @@
 {
   "name": "opencors",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "OpenCORS is a simple NodeJS based CORS Proxy",
   "main": "dist/cjs/opencors.js",
   "module": "dist/mjs/opencors.js",

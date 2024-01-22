@@ -73,7 +73,7 @@ export class OpenCORS{
 			
 			let requrl = req.url as string
 			
-			requrl = requrl.startsWith('/')?req.headers.host as string+req.url:req.url as string
+			requrl = requrl.startsWith('/')?'http://'+req.headers.host as string+req.url:req.url as string
 			
 			const targeturl = (new URL(requrl)).searchParams.get("url")
 			
