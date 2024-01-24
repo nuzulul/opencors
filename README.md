@@ -2,12 +2,19 @@
 
 **OpenCORS** is a simple NodeJS based CORS Proxy
 
+[![NPM](https://nodei.co/npm/opencors.png?mini=true)](https://www.npmjs.com/package/opencors)
+[![npm version](https://badge.fury.io/js/opencors.svg)](https://www.npmjs.com/package/opencors)
+
 ## Features
 
-✅ 0 Dependencies
-✅ Follow redirects
-✅ Raw response type
-✅ SSL
+* ✅ 0 Dependencies
+* ✅ Follow redirects
+* ✅ Plain output
+* ✅ SSL
+
+## Demo
+
+[https://codesandbox.io/p/devbox/opencors-lrwj6n](https://codesandbox.io/p/devbox/opencors-lrwj6n)
 
 ## Installation
 
@@ -17,7 +24,7 @@ npm install opencors
 
 ## Example
 
-### Server
+### Server (NodeJS)
 
 ```javascript
 import {OpenCORS} from 'opencors'
@@ -37,7 +44,7 @@ Request examples:
 
 * `https://lrwj6n-4000.csb.app/?url=https://www.google.com/` - Raw Google.com with CORS headers
 
-### Client
+### Client (Browser)
 
 ```javascript
 fetch('https://lrwj6n-4000.csb.app/?url=https://www.google.com/').then(function (response){
@@ -49,7 +56,7 @@ fetch('https://lrwj6n-4000.csb.app/?url=https://www.google.com/').then(function 
 })
 ```
 
-## Demo
+### Test
 
 ```javascript
 git clone https://github.com/nuzulul/opencors.git
@@ -57,7 +64,6 @@ npm install
 npm start
 ```
 
-Live demo :
+## License
 
-* [https://lrwj6n-4000.csb.app/](https://lrwj6n-4000.csb.app/)
-* [https://codesandbox.io/p/devbox/opencors-lrwj6n](https://codesandbox.io/p/devbox/opencors-lrwj6n)
+MIT
