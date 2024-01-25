@@ -6,6 +6,6 @@
         "target": "es6",
         "rootDir": ".",
     },
-  "include": ["server.ts","src"],
+  "include": ["test/test/server-test.js","src"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

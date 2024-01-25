@@ -1,6 +1,6 @@
 {
   "name": "opencors",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "description": "OpenCORS is a simple NodeJS based CORS Proxy",
   "main": "dist/cjs/opencors.js",
   "module": "dist/mjs/opencors.js",
@@ -13,10 +13,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "npm run build && node public/server.js",
+    "start": "npm run build && node public/test/test/server-test.js",
     "build-win": "del /S /Q .\\dist\\* && tsc -p tsconfig-mjs.json && tsc -p tsconfig-cjs.json && echo {\"type\": \"commonjs\"}>dist\\cjs\\package.json && echo {\"type\": \"module\"}>dist\\mjs\\package.json",
     "start-ts":"ts-node server.ts",
-    "dev":"nodemon server.ts",
+    "dev":"nodemon -e js,ts --watch src --watch test --exec \"npm start\"",
     "clean-win":"del /S /Q .\\public && del /S /Q .\\dist && rmdir /S /Q .\\node_modules && rmdir /S /Q .\\test\\cjs\\node_modules && rmdir /S /Q .\\test\\mjs\\node_modules",
     "test-win":"npm link && cd .\\test\\cjs && npm install && npm link opencors && cd .\\..\\mjs && npm install && npm link opencors",
     "test-cjs":"cd .\\test\\cjs && npm start",

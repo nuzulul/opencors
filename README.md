@@ -14,7 +14,7 @@
 
 ## Demo
 
-[https://codesandbox.io/p/devbox/opencors-lrwj6n](https://codesandbox.io/p/devbox/opencors-lrwj6n)
+[https://codesandbox.io/p/devbox/nodejs-cors-proxy-xqsqwg](https://codesandbox.io/p/devbox/nodejs-cors-proxy-xqsqwg)
 
 ## Installation
 
@@ -22,7 +22,7 @@
 npm install opencors
 ```
 
-## Example
+## Example Usage
 
 ### Server (NodeJS)
 
@@ -42,26 +42,18 @@ const server = new OpenCORS({
 ```
 Request examples:
 
-* `https://lrwj6n-4000.csb.app/?url=https://www.google.com/` - Raw Google.com with CORS headers
+* `https://xqsqwg-8080.csb.app/?url=https://www.google.com/` - Raw Google.com with CORS headers
 
 ### Client (Browser)
 
 ```javascript
-fetch('https://lrwj6n-4000.csb.app/?url=https://www.google.com/').then(function (response){
+fetch('https://xqsqwg-8080.csb.app/?url=https://www.google.com/').then(function (response){
 	return response.text()
 }).then(function (html){
 	console.log(html)
 }).catch(function (err){
 	console.warn('Something went wrong.',err)
 })
-```
-
-### Test
-
-```javascript
-git clone https://github.com/nuzulul/opencors.git
-npm install
-npm start
 ```
 
 ## License
