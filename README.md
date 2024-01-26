@@ -12,6 +12,20 @@
 * ✅ Plain output
 * ✅ SSL
 
+## Qiuck Start
+
+### Local
+
+```javascript
+git clone https://github.com/nuzulul/opencors.git
+npm install
+npm start
+```
+
+### Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnuzulul%2Fopencors&project-name=opencors&repository-name=opencors)
+
 ## Demo
 
 [https://codesandbox.io/p/devbox/nodejs-cors-proxy-xqsqwg](https://codesandbox.io/p/devbox/nodejs-cors-proxy-xqsqwg)

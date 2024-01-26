@@ -4,7 +4,7 @@ import https from 'https'
 
 export class OpenCORS{
 
-	public constructor({port}:{port:number}){
+	public constructor({port}:{port?:number}){
 	
 		const serverport:string|number = port || process.env.PORT || 8080
 	
