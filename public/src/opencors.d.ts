@@ -1,5 +1,6 @@
 export declare class OpenCORS {
-    constructor({ port }: {
+    constructor({ port, front }: {
         port?: number;
+        front?: string;
     });
 }

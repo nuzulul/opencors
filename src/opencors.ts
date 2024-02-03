@@ -4,11 +4,17 @@ import https from 'https'
 
 export class OpenCORS{
 
-	public constructor({port}:{port?:number}){
+	public constructor({port,front}:{port?:number,front?:string}){
 	
 		const serverport:string|number = port || process.env.PORT || 8080
 	
 		const server = http.createServer(async(req,res)=>{
+
+			res.statusCode = 200
+			
+			res.setHeader('Content-Type','text/plain')
+			
+			res.setHeader('Access-Control-Allow-Origin','*')
 
 			function isvalidurl(url:string){
 			
@@ -65,11 +71,15 @@ export class OpenCORS{
 				})
 			}
 			
-			let body = 	'OpenCors\n'+
-						'OpenCORS is a simple NodeJS based CORS Proxy\n'+
-						'https://github.com/nuzulul/opencors\n\n'+
-						'Usage :\n'+req.headers.host+'/?url=\n\n'+
-						'Agent:\n'+req.headers['user-agent'] ?? "Unknown"
+			let body = 	'OpenCors<br>'+
+						'OpenCORS is a simple NodeJS based CORS Proxy<br>'+
+						'https://github.com/nuzulul/opencors<br><br>'+
+						'Usage :<br>'+req.headers.host+'/?url=<br><br>'+
+						'Agent:<br>'+(req.headers['user-agent'] ?? "Unknown")+'<br><br>'+
+						'Demo:<br>'+
+						'Input Url <input type="text" id="input"/><button id="button" onclick="location.href=\'/?url=\'+document.getElementById(\'input\').value">Submit</button>'
+			
+			if(front != undefined) body = front
 			
 			let requrl = req.url as string
 			
@@ -87,13 +97,9 @@ export class OpenCORS{
 			
 				body = JSON.stringify({status:'error',msg:'Invalid target url',targeturl})
 				
+			}else{
+				res.setHeader('Content-Type','text/html')
 			}
-						
-			res.statusCode = 200
-			
-			res.setHeader('Content-Type','text/plain')
-			
-			res.setHeader('Access-Control-Allow-Origin','*')
 			
 			res.end(body)
 		})

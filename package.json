@@ -1,6 +1,6 @@
 {
   "name": "opencors",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "OpenCORS is a simple NodeJS based CORS Proxy",
   "main": "dist/cjs/opencors.js",
   "module": "dist/mjs/opencors.js",
@@ -11,16 +11,18 @@
     }
   },
   "scripts": {
-    "start": "tsc && node public/server.js",
-	"prepare-build-win-1": "if not exist .\\dist (mkdir dist) else (rmdir /S /Q .\\dist\\)",
-	"prepare-build-win-2": "if not exist .\\public (mkdir public) else (rmdir /S /Q .\\public\\)",
-    "build-win": "npm run prepare-build-win-1 && npm run prepare-build-win-2 && tsc && tsc -p tsconfig-mjs.json && tsc -p tsconfig-cjs.json && echo {\"type\": \"commonjs\"}>dist\\cjs\\package.json && echo {\"type\": \"module\"}>dist\\mjs\\package.json",
-    "dev":"nodemon -e js,ts --watch src --watch server.ts --exec \"npm start\"",    
-    "clean-win":"del /S /Q .\\public && del /S /Q .\\dist && rmdir /S /Q .\\node_modules && rmdir /S /Q .\\test\\cjs\\node_modules && rmdir /S /Q .\\test\\mjs\\node_modules",
-    "test-win":"npm link && cd .\\test\\cjs && npm install && npm link opencors && cd .\\..\\mjs && npm install && npm link opencors",
-    "test-cjs":"cd .\\test\\cjs && npm start",
-    "test-mjs":"cd .\\test\\mjs && npm start",
-    "prepare-win":"npm install && npm run build-win && npm run dev"
+    "start": "npm run dev-node",
+	
+	"removedir": "node -e \"var fs = require('fs'); try{process.argv.slice(1).map((fpath) => fs.rmdirSync(fpath, { recursive: true }))}catch(err){console.log(`Dist not found`)}; process.exit(0);\"",
+	"build-all": "tsc -p tsconfig.json && tsc -p tsconfig-mjs.json && tsc -p tsconfig-cjs.json && echo {\"type\": \"commonjs\"}>dist\\cjs\\package.json && echo {\"type\": \"module\"}>dist\\mjs\\package.json",	
+    "build": "npm run removedir dist && npm run removedir public && npm run build-all",
+    
+    "build-dev":"npm run removedir public && tsc -p tsconfig.json",
+	"dev-node":"nodemon -e js,ts --watch src --watch server.ts --exec \"npm run build-dev && node public/server.js\"",
+	"dev":"npm run dev-node",
+	
+	"test-win":"npm link && cd .\\test\\cjs && npm install && npm link opencors && cd .\\..\\mjs && npm install && npm link opencors",
+	"test": "npm run dev-node"
   },
   "files": [
     "dist/",

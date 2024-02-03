@@ -44,14 +44,16 @@ npm install opencors
 import {OpenCORS} from 'opencors'
 
 const server = new OpenCORS({
-	//port:4000
+	//port:4000,
+	//front: '<h1>opencors</h1>'
 })
 ```
 ```javascript
 const {OpenCORS} = require('opencors')
 
 const server = new OpenCORS({
-	//port:4000
+	//port:4000,
+	//front: '<h1>opencors</h1>'
 })
 ```
 Request examples:
